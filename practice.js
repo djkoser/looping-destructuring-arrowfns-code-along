@@ -367,7 +367,10 @@ You should not use the ES5 function declaration or function expression syntax in
 
 // Code here
 
-const gemInfo = (gemType,gemSize,gemWeight) => {gemType,gemSize,gemWeight};
+const gemInfo = (gemType,gemSize,gemWeight) => {
+    return {gemType,gemSize,gemWeight}
+};
+
 
 
 
@@ -395,7 +398,10 @@ let jobs = [
 
 // Code here
 
-
+const identifier = () => { 
+    let array=jobs.filter(el=>el.programmer?true:false);
+    return array[0];
+}; 
 
 ////////// PROBLEM 19 //////////
 
@@ -410,7 +416,9 @@ You should not use a for loop, but should use the filter method instead
 
 // Code here
 
-
+const evens=(array)=>{
+    return array.filter(el=>el%2===0?true:false)
+}
 
 ////////// PROBLEM 20 //////////
 
@@ -427,7 +435,7 @@ You should not use a for loop, but should use the filter method instead
 
 // Code here
 
-
+const startWithLetterA=(array)=> array.filter(el=>el[0]==="A"|el[0]==="a"?true:false)
 
 ////////// PROBLEM 21 //////////
 
@@ -439,7 +447,7 @@ Make sure to use arrow functions combined with the map method
 */
 
 const formalGreeting = names => {
-    // Code here
+    return names.map(el=>"Hello, "+el);// Code here
 }
 
 
@@ -454,5 +462,5 @@ Make sure to use arrow functions combined with the reduce method
 */
 
 const productOfArray = numbers => {
-    // Code here
-}
+    return numbers.reduce((el,el2) => el*el2) // Code here
+};
